@@ -1,0 +1,212 @@
+.header {
+
+    &__nav {
+        @media (max-width: 807px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        @media (max-width: 807px) {
+            order: 1;
+        }
+    }
+
+    &__actions {
+        @media (max-width: 807px) {
+            order: 2;
+        }
+    }
+
+    &__elementsResponsive {
+        @media (max-width: 807px) {
+            display: block;
+            align-self: center;
+            position: relative;
+            bottom: 0.25rem;
+        }
+    }
+
+    &__log-in {
+        @media (max-width: 807px) {
+            display: none;
+        }
+    }
+
+    &__cart {
+        @media (max-width: 807px) {
+            display: none;
+        }
+    }
+
+    &__wishlist {
+        @media (max-width: 807px) {
+            display: none;
+        }
+    }
+}
+
+.category {
+    &__inner {
+        @media (max-width: 807px) {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-y: auto;
+            width: 100%;
+        }
+    }
+}
+
+.best-selling {
+
+    &__book-cards {
+        @media (max-width: 904px) {
+            display: flex;
+            align-items: center;
+            overflow-y: auto;
+            width: 100%;
+            gap: 0.5rem;
+            height: 100%;
+        }
+    }
+
+    &__book-card {
+        @media (max-width: 904px) {
+            display: flex;
+            padding: 0.5rem;
+            min-width: 190px;
+            flex-direction: column;
+        }
+    }
+
+    &__rating {
+        @media (max-width: 904px) {
+            left: 0.5rem;
+        }
+    }
+}
+
+.input-container {
+    @media (max-width: 807px) {
+        order: 3;
+        margin: 0.625rem 0 0 0;
+    }
+}
+
+.footer {
+    &__inner {
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    &__info-section {
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            align-items: unset;
+            gap: 3.125rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+.company-overview {
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        gap: 2rem;
+    }
+}
+
+.textCategory {
+    @media (max-width: 807px) {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        gap: 0.25rem;
+    }
+}
+
+.hero-slider {
+
+    .slider {
+        .swiper-pagination-bullet {
+            @media (max-width: 807px) {
+                width: 25px !important;
+                height: 25px !important;
+            }
+
+            @media (max-width: 500px) {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            @media (max-width: 807px) {
+                border: 5px solid #fff !important;
+                background: #000 !important;
+                width: 30px;
+                height: 30px;
+            }
+
+            @media (max-width: 500px) {
+                border: 2.5px solid #fff !important;
+            }
+        }
+
+        .swiper-button-next-slider,
+        .swiper-button-prev-slider {
+            @media (max-width: 807px) {
+                width: 54px !important;
+                height: 54px !important;
+                z-index: 1 !important;
+            }
+
+            @media (max-width: 500px) {
+                width: 34px !important;
+                height: 34px !important;
+            }
+        }
+
+        .swiper-button-next-slider::after,
+        .swiper-button-prev-slider::after {
+            @media (max-width: 807px) {
+                font-size: 21px !important;
+                font-weight: 900 !important;
+                color: #000 !important;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    &__inner {
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__swiper-container {
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
+    }
+
+    &__hot-news {
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
+    }
+}
