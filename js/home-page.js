@@ -154,3 +154,18 @@ function checkIfAllLoaded() {
         toggleLoader(loader);
     }
 }
+
+function updateImageSource() {
+    const imgElement = document.querySelector('.hero-slider__banner-img');
+    if (window.innerWidth < 1200) {
+        imgElement.src = '/hero-slider/rightBanner.png';
+    } else {
+        imgElement.src = '/hero-slider/rightBanner.svg';
+    }
+}
+
+// Initial check
+updateImageSource();
+
+// Add event listener for window resize
+window.addEventListener('resize', updateImageSource);
