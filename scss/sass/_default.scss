@@ -185,14 +185,6 @@
     gap: 2rem;
     padding: 1.5rem;
 
-    &__text {
-        font-size: 28px;
-        font-weight: 600;
-        line-height: 42px;
-        letter-spacing: 0.01em;
-        color: var(--color-primary-text);
-    }
-
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
@@ -231,6 +223,11 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0.01em;
+    color: var(--color-primary-text);
 
     &__category-name {
         font-size: 28px;
@@ -434,6 +431,7 @@
 .footer {
     background: #232323;
     width: 100%;
+    height: 100%;
     padding: 2rem 1.5rem;
 
     &__inner {
@@ -709,6 +707,259 @@
         background-color: #fff;
         /* Page color */
         transform: translateZ(0px);
+    }
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        width: 81.76%;
+        box-shadow: 0px 4px 30px 0px #00000026;
+        border-radius: 0.625rem;
+    }
+
+    &__name {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 42px;
+        letter-spacing: 0.01em;
+        color: #000000DE;
+        margin-bottom: 5px;
+    }
+
+    &__data-product {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    &__data {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__reviews {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        margin-bottom: 15px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__reviews-number {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+        color: #000000DE;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    &__details {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        margin-bottom: 25px;
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+    }
+
+    &__sub {
+        border-right: 0.5px solid #E1E1E1;
+        min-width: 31px;
+        height: 26px;
+    }
+
+    &__add {
+        border-left: 0.5px solid #E1E1E1;
+        min-width: 31px;
+        height: 26px;
+    }
+
+    &__price {
+        color: #000000DE;
+        font-family: Rubik, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 37.5px;
+        letter-spacing: 0.025rem;
+    }
+
+    &__hardcover {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 30px;
+    }
+
+    &__hardcover-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 206px;
+        height: 67px;
+        padding: 8px;
+        gap: 0.625rem;
+        border-radius: 5px;
+        border: 1px solid #E7E7E7;
+    }
+
+    &__binding {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.015rem;
+        color: #000000AD;
+    }
+
+    &__binding-price {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+        color: #000000AD;
+    }
+
+    &__additional-functions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__type-purchase {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    &__buy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 90px;
+        height: 45px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #FFA553 0%, #FF6C58 100%);
+        border: none;
+        cursor: pointer;
+    }
+
+    &__buy-span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+    }
+
+    &__addTo-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 8.625rem;
+        height: 45px;
+        padding: 0.5rem 13px;
+        gap: 0.5rem;
+        border: 1.75px solid #FFA553;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &__cart-span {
+        color: #000000DE;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+    }
+
+    &__type-delivery {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: initial;
+    }
+
+    &__ordinary-delivery {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+
+    &__delivery-img {
+        max-width: 30px;
+        height: 30px;
+    }
+
+    &__delivery-speed {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        color: #000000DE;
+    }
+
+    &__free {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: #08C551;
+    }
+
+    &__for-money {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: #E16100;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__desc-span {
+        color: #000000DE;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 34.5px;
+        letter-spacing: 0.01em;
+    }
+
+    &__desc-wrapper {
+        width: 100%;
+        background-color: #F8F8F8;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    &__desc-text {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+        color: black;
     }
 }
 

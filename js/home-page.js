@@ -1,11 +1,9 @@
 const BASE_URL = "https://api.brandstore.uz/api/home";
-const ARTICLES = "https://api.brandstore.uz/api/posts";
 const BANNERS = "https://api.brandstore.uz/api/banners";
 
 document.addEventListener("DOMContentLoaded", (event) => {
     fetchProduct();
-    // fetchArticles();
-    fetchBanners(); // Fetch banners when the DOM is loaded
+    fetchBanners(); // Fetch banners
 });
 
 let dataOfProduct = [];
@@ -39,23 +37,6 @@ function fetchProduct() {
             checkIfAllLoaded();
         });
 }
-
-// // Fetch articles
-// function fetchArticles() {
-//     loader = true;
-//     toggleLoader(loader);
-
-//     fetch(ARTICLES)
-//         .then((response) => response.json())
-//         .then((data) => {
-//             dataOfArticles = data?.data || [];
-//             renderArticles(dataOfArticles);
-//         })
-//         .finally(() => {
-//             articlesLoaded = true;
-//             checkIfAllLoaded();
-//         });
-// }
 
 // Fetch banners
 function fetchBanners() {
@@ -91,6 +72,10 @@ function renderProducts() {
         const productImage = product.images[0].types.medium_default;
         const formattedPrice = parseInt(product.random_shop.price).toLocaleString('ru-RU').replace(/,/g, ' ');
 
+        // Construct the product link (you can append product-specific data like ID if needed)
+        const productLink = `/product-page/product-page.html?id=${product.id}`;
+
+        // Set the inner HTML of the book card
         bookCard.innerHTML = `
             <div class="best-selling__rating">
                 <img src="/best-selling/star.png" alt="Star" class="best-selling__star">
@@ -106,50 +91,33 @@ function renderProducts() {
             </div>
         `;
 
+        // Add click event to navigate to the product page when the book card is clicked
+        bookCard.addEventListener("click", () => {
+            window.location.href = productLink;
+        });
+
         productContainer.appendChild(bookCard);
     });
 }
 
-// // Render articles
-// function renderArticles(data) {
-//     const swiperWrapper = document.querySelector('.swiper-wrapper-articles');
-//     swiperWrapper.innerHTML = "";
-
-//     data.forEach((article) => {
-//         const postImageDefault = article.image.types.post_header_default;
-//         const swiperSlide = document.createElement("div");
-//         swiperSlide.className = "swiper-articles-slide";
-
-//         swiperSlide.innerHTML = `
-//             <img src="${postImageDefault}" alt="${article.title}">
-//             <span class="swiper-span">${article.title}</span>
-//             <a class="swiper-sliderDetails" href="${article.slug}">Подробно</a>
-//         `;
-
-//         swiperWrapper.appendChild(swiperSlide);
-//     });
-// }
-
 // Render banners into slider slides
 function renderBanners(banners) {
-    const sliderSlides = document.querySelectorAll('.slider-slide'); // Select all the existing empty slides
+    const sliderSlides = document.querySelectorAll('.slider-slide');
 
     sliderSlides.forEach((slide, index) => {
         if (banners[index]) {
-            const bannerImage = banners[index].background.url; // Get the banner background image URL from API
-            const imgElement = document.createElement('img'); // Create a new img element
-            imgElement.src = bannerImage; // Set the src attribute to the banner URL
-            imgElement.alt = `Banner ${index + 1}`; // Set an alt attribute for accessibility
-            imgElement.style.width = "100%"; // Adjust image size
+            const bannerImage = banners[index].background.url;
+            const imgElement = document.createElement('img');
+            imgElement.src = bannerImage;
+            imgElement.style.width = "100%";
 
-            slide.appendChild(imgElement); // Append the image to the slide
+            slide.appendChild(imgElement);
         }
     });
 }
 
-// Check if everything is loaded (for loader to disable) 
 function checkIfAllLoaded() {
-    if (productLoaded && bannersLoaded) { //&& articlesLoaded
+    if (productLoaded && bannersLoaded) { 
         loader = false;
         toggleLoader(loader);
     }
@@ -164,8 +132,6 @@ function updateImageSource() {
     }
 }
 
-// Initial check
 updateImageSource();
 
-// Add event listener for window resize
 window.addEventListener('resize', updateImageSource);

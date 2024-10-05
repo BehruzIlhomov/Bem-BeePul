@@ -10,11 +10,3 @@ var swiper1 = new Swiper(".slider", {
     },
 });
 
-var swiper = new Swiper(".swiper-articles", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
